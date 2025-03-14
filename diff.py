@@ -4,7 +4,11 @@ import sys
 
 def read_file(path):
     with open(path) as f:
-        return f.read().splitlines()
+        lines = f.read().splitlines()
+        while lines and lines[-1] == "":
+            lines.pop()
+
+        return lines
 
 ADD = 'A'
 SUBST = 'S'
