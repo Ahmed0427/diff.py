@@ -1,7 +1,7 @@
 # diff.py
 
 A file diff tool that compares two files and highlights the differences,
-showing added, removed, or modified content. 
+showing added and removed content. 
 
 ### Usage
 
