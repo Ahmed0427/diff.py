@@ -4,7 +4,7 @@ import sys
 
 def read_file(path):
     with open(path) as f:
-        return list(filter(lambda line: line != "", f.read().splitlines()))
+        return f.read().splitlines()
 
 ADD = 'A'
 SUBST = 'S'
@@ -80,7 +80,7 @@ def lev_dist_actions(lines1, lines2):
         j -= 1
         trace.append((action, lines2[j]))
 
-    return trace
+    return reversed(trace)
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
@@ -92,13 +92,13 @@ if __name__ == '__main__':
 
     for action in lev_dist_actions(lines1, lines2):
         if action[0] == 'I':
-            print('   ' + action[1])
+            print(' ' + action[1])
         elif action[0] == 'A':
-            print('++ ' + action[1])
+            print('+' + action[1])
         elif action[0] == 'R':
-            print('-- ' + action[1])
+            print('-' + action[1])
         elif action[0] == 'S':
-            print('-- ' + action[1])
-            print('++ ' + action[2])
+            print('-' + action[1])
+            print('+' + action[2])
         else:
             assert False, "Unreachable"
