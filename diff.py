@@ -98,11 +98,11 @@ if __name__ == '__main__':
         if action[0] == 'I':
             print(' ' + action[1])
         elif action[0] == 'A':
-            print('\033[36m' + '+' + action[1] + '\033[0m')
+            print('\033[32;1m' + '+' + action[1] + '\033[0m')
         elif action[0] == 'R':
-            print('\033[31m' + '-' + action[1] + '\033[0m')
+            print('\033[31;1m' + '-' + action[1] + '\033[0m')
         elif action[0] == 'S':
-            print('\033[31m' + '-' + action[1] + '\033[0m')
-            print('\033[36m' + '+' + action[2] + '\033[0m')
+            print('\033[31;1m' + '-' + action[1] + '\033[0m')
+            print('\033[32;1m' + '+' + action[2] + '\033[0m')
         else:
             assert False, "Unreachable"
